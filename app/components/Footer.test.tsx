@@ -7,8 +7,15 @@ describe("Footer", () => {
   it("renders the footer", () => {
     render(<Footer />);
 
-    const content = screen.getByText(/Footer/i);
+    const footer = screen.getByRole("contentinfo");
 
-    expect(content).toBeInTheDocument();
+    expect(footer).toBeInTheDocument();
+  });
+  it("renders the counter", () => {
+    render(<Footer />);
+
+    const counter = screen.getByText("Counter");
+
+    expect(counter).toBeInTheDocument();
   });
 });
