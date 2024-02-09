@@ -6,8 +6,10 @@ describe("Counter", () => {
   it("renders the counter", () => {
     render(<Counter />);
 
-    const content = screen.getByText(/Counter/i);
+    const counter = screen.getByText("Counter");
 
-    expect(content).toBeInTheDocument();
+    expect(counter).toBeInTheDocument();
   });
+  it.todo("calls bff to get the counter value");
+  it.todo("makes the number humanly readable");
 });
