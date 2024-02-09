@@ -17,7 +17,7 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <html lang="en">
+    <html lang="en" dir="rtl">
       <body className={inter.className}>
         <Header />
         {children}
