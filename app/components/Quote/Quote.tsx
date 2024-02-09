@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 /**
  * Quote component
  *
@@ -7,5 +9,10 @@
  * @returns quote component
  */
 export const Quote = () => {
-  return <article>Quote</article>;
+  return (
+    <article className="flex flex-col items-center">
+      <Image src="/images/quote.png" alt="Quote" width={100} height={100} />
+      <p className="text-2xl">Quote</p>
+    </article>
+  );
 };
