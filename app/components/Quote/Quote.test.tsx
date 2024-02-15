@@ -4,7 +4,7 @@ import { Quote } from "./Quote";
 
 describe("Quote", () => {
   it("renders the Quote", () => {
-    render(<Quote />);
+    render(<Quote content="" />);
 
     const quote = screen.getByRole("article");
 
