@@ -1,10 +1,36 @@
-import { Quote } from "./components/Quote/Quote";
+import { SWRProvider } from "./components/Providers/SWRProvider";
+import { RandomQuote } from "./components/RandomQuote/RandomQuote";
+import { fetchRandomQuote } from "./utils/fetchRandomQuote";
 
-const Home = () => {
+export const fetcher = (url: string) =>
+  fetch(url, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then((res) => {
+    if (!res.ok) throw new Error(res.statusText);
+    return res.json();
+  });
+
+const Home = async () => {
+  const randomQuote = await fetchRandomQuote();
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="text-4xl font-bold">Quote of the day</h1>
-      <Quote />
+    <main className="flex flex-col items-center px-5 sm:px-20">
+      <h1 className="text-2xl font-bold flex h-full p-10 text-center sm:text-4xl">
+        Quote of the day
+      </h1>
+
+      <SWRProvider
+        value={{
+          fallback: {
+            "https://api.chucknorris.io/jokes/random?category=dev": randomQuote,
+          },
+        }}
+      >
+        <RandomQuote />
+      </SWRProvider>
     </main>
   );
 };
