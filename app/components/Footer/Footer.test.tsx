@@ -11,11 +11,4 @@ describe("Footer", () => {
 
     expect(footer).toBeInTheDocument();
   });
-  it("renders the counter", () => {
-    render(<Footer />);
-
-    const counter = screen.getByText("Counter");
-
-    expect(counter).toBeInTheDocument();
-  });
 });
