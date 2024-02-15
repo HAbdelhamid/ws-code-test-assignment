@@ -17,8 +17,10 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <html lang="en" dir="rtl">
-      <body className={inter.className}>
+    <html lang="en" dir="ltr">
+      <body
+        className={`h-screen flex flex-col justify-between ${inter.className}`}
+      >
         <Header />
         {children}
         <Footer />
