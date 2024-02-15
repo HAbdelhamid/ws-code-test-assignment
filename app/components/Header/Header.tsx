@@ -3,12 +3,11 @@ import Logo from "../Logo/Logo";
 /**
  * Header component
  *
- * @todo add styles
  * @returns header component
  */
 const Header = () => {
   return (
-    <header>
+    <header className="pt-10 px-5 sm:px-20">
       <Logo />
     </header>
   );
