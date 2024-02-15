@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev:dev": "next dev",
+    "dev:clean-up": "node ./cleanup.js",
+    "dev": "npm-run-all dev:*",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -11,9 +13,11 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
+    "@prisma/client": "^5.9.1",
     "next": "14.1.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "swr": "^2.2.4"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.2",
@@ -27,9 +31,13 @@
     "eslint-config-next": "14.1.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "msw": "^2.2.0",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8",
+    "prisma": "^5.9.1",
     "tailwindcss": "^3.3.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5"
+    "typescript": "^5",
+    "undici": "^6.6.2"
   }
 }
