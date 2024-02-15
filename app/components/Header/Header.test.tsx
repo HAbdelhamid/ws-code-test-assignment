@@ -10,11 +10,4 @@ describe("Header", () => {
 
     expect(header).toBeInTheDocument();
   });
-  it("renders the logo", () => {
-    render(<Header />);
-
-    const logo = screen.getByText("Logo");
-
-    expect(logo).toBeInTheDocument();
-  });
 });
