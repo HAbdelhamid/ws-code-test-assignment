@@ -6,7 +6,7 @@ describe("Logo", () => {
   it("renders the logo", () => {
     render(<Logo />);
 
-    const content = screen.getByText(/Logo/i);
+    const content = screen.getByRole("img");
 
     expect(content).toBeInTheDocument();
   });
